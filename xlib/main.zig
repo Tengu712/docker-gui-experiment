@@ -17,6 +17,7 @@ pub fn main() !void {
         try stdout.print("[ error ] main(): failed to open a display.\n", .{});
         std.process.exit(1);
     }
+    defer _ = x11.XCloseDisplay(display);
 
     const window = x11.XCreateSimpleWindow(
         display,
@@ -29,6 +30,8 @@ pub fn main() !void {
         0,
         0,
     );
+    defer _ = x11.XDestroyWindow(display, window);
+
     const wm_protocols = x11.XInternAtom(display, "WM_PROTOCOLS", 0);
     var wm_delete_window_atom = x11.XInternAtom(display, "WM_DELETE_WINDOW", 0);
     _ = x11.XSetWMProtocols(display, window, &wm_delete_window_atom, 1);
@@ -67,7 +70,4 @@ pub fn main() !void {
         count = (count + 1) % 60;
         std.time.sleep(16666666);
     }
-
-    _ = x11.XDestroyWindow(display, window);
-    _ = x11.XCloseDisplay(display);
 }
