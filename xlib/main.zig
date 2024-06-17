@@ -35,7 +35,7 @@ pub fn main() !void {
     const wm_protocols = x11.XInternAtom(display, "WM_PROTOCOLS", 0);
     var wm_delete_window_atom = x11.XInternAtom(display, "WM_DELETE_WINDOW", 0);
     _ = x11.XSetWMProtocols(display, window, &wm_delete_window_atom, 1);
-    _ = x11.XStoreName(display, window, "WSLg Docker experiment: Xlib");
+    _ = x11.XStoreName(display, window, "Docker GUI experiment: Xlib");
     _ = x11.XMapWindow(display, window);
     _ = x11.XFlush(display);
 

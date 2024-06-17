@@ -2,7 +2,7 @@ services:
   xlib:
     platform: linux/x86_64
     build: ./
-    image: Tengu712/wslg-docker-experiment/xlib
+    image: Tengu712/docker-gui-experiment/xlib
     environment:
       - DISPLAY=$DISPLAY
     volumes:

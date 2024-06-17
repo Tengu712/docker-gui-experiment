@@ -2,7 +2,7 @@ services:
   swing:
     platform: linux/x86_64
     build: ./
-    image: Tengu712/wslg-docker-experiment/swing
+    image: Tengu712/docker-gui-experiment/swing
     environment:
       - DISPLAY=$DISPLAY
     volumes:
