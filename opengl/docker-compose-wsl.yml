@@ -1,0 +1,26 @@
+services:
+  opengl:
+    platform: linux/x86_64
+    build: ./
+    image: Tengu712/docker-gui-experiment/opengl
+    privileged: true
+    environment:
+      - DISPLAY=$DISPLAY
+      - LD_LIBRARY_PATH=/usr/lib/wsl/lib
+    volumes:
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
+      - type: bind
+        source: /mnt/wslg
+        target: /mnt/wslg
+      - type: bind
+        source: /usr/lib/wsl
+        target: /usr/lib/wsl
+    devices:
+      - /dev/dxg:/dev/dxg
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
