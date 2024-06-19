@@ -1,0 +1,7 @@
+services:
+  swing:
+    platform: linux/x86_64
+    build: ./
+    image: Tengu712/docker-gui-experiment/swing
+    environment:
+      - DISPLAY=host.docker.internal:0.0
