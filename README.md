@@ -29,9 +29,9 @@ If you use WSLg:
 1. Install WSL2 and make sure WSLg is enabled. Do all the following tasks on WSL2.
 2. Install Docker.
 3. Install NVIDIA Container Toolkit.
-4. Run `docker compose up` or `docker compose -f docker-compose-wsl.yml up` at each directory.
+4. Run `docker compose -f docker-compose-wsl.yml up` at each directory.
 
-If you use Docker Desktop:
+If you use VcXsrv:
 
 1. Install WSL2.
 2. Install VcXsrv and run it.
