@@ -4,13 +4,23 @@
 
 It's samples of running GUI apllications in Docker container.
 
-What can be understood from this samples is:
+I understood from this samples that:
 
 - There is a slight delay in keyboard input.
+- The flag `--gpus all` is required on Linux.
 - OpenGL programs executed via WSLg and Docker Desktop cannot synchronize with vertical sync.
+- Vulkan is unavailable in Docker containers.
 - Distributing GUI applications as Docker containers may be useful for learning purposes related to libraries, but may not be practical for real-world applications.
 
 ## Run
+
+### Linux
+
+1. Install Docker.
+2. Install NVIDIA Driver.
+3. Install NVIDIA Container Toolkit.
+4. Run `export DOCKER_USER=$(id -u):$(id -g)`.
+4. Run `docker compose -f docker-compose-linux.yml up` or `./run.sh` at each directory.
 
 ### Windows
 

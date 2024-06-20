@@ -1,0 +1,12 @@
+services:
+  xlib:
+    platform: linux/x86_64
+    build: ./
+    image: Tengu712/docker-gui-experiment/xlib
+    user: $DOCKER_USER
+    environment:
+      - DISPLAY=$DISPLAY
+    volumes:
+      - type: bind
+        source: /tmp/.X11-unix
+        target: /tmp/.X11-unix
